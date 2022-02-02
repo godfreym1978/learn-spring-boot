@@ -1,5 +1,15 @@
+#steps:
+#- name: 'bash'
+#  args: ['pwd']
+#- name: 'bash'
+#  args: ['ls']
 steps:
-- name: 'bash'
-  args: ['pwd']
-- name: 'bash'
-  args: ['ls']
+  - name: maven:3-jdk-8
+    entrypoint: mvn
+    args: ["test","-f","helloworld/pom.xml"]
+#  - name: maven:3-jdk-8
+#    entrypoint: mvn
+#    args: ["package", "-Dmaven.test.skip=true"]
+#  - name: gcr.io/cloud-builders/docker
+#    args: ["build", "-t", "gcr.io/$PROJECT_ID/hellospring", "--build-arg=JAR_FILE=target/hello-spring-1.0.0.jar", "."]
+#images: ["gcr.io/$PROJECT_ID/hellospring"]
