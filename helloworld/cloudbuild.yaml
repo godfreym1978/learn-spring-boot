@@ -13,7 +13,10 @@ steps:
   - name: 'bash'
     args: ["ls"]
   - name: 'bash'
-    args: ["ls -ltr"]
+    args: 
+    - 'ls'
+    - '-ltr'
+    - ' helloworld'
 
   - name: gcr.io/cloud-builders/docker
 #    args: ["build", "-t", "gcr.io/$PROJECT_ID/hellospring", "--build-arg=JAR_FILE=target/hello-spring-1.0.0.jar", "."]
