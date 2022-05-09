@@ -11,5 +11,5 @@ steps:
 #    entrypoint: mvn
 #    args: ["package", "-Dmaven.test.skip=true","-f","helloworld/pom.xml"]
   - name: gcr.io/cloud-builders/docker
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/hellospring", "--build-arg=JAR_FILE=target/hello-spring-1.0.0.jar", "workspace/helloworld/."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/hellospring", "--build-arg=JAR_FILE=target/hello-spring-1.0.0.jar", "helloworld/."]
 images: ["gcr.io/$PROJECT_ID/hellospring"]
